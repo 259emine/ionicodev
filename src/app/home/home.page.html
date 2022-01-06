@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Üye Sayfası
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-list *ngFor="let u of UsersList">
+    <div style="margin:10px; display:flex;">
+      <ion-avatar slot="avatar">
+        <img [src]="u.avatar"/>
+      </ion-avatar>
+      <div>{{u.first_name}} {{u.last_name}} {{u.email}}</div>
+    </div>
+  </ion-list>
+ 
+  <ion-button expand="block" color="danger" fill='clear' (click)="logout()">Çıkış Yap</ion-button>
+</ion-content>
